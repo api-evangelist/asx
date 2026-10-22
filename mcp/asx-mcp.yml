@@ -1,0 +1,40 @@
+name: ASX MCP Server (candidate)
+description: >-
+  No official ASX MCP server was found. A web search (2026-10-21) returned only third-party
+  projects (e.g. StonkWatch, not affiliated with ASX), and https://www.asx.com.au/mcp answered
+  403 to both the probe and the control path in pre-flight (opaque: the edge refuses before
+  routing, which proves nothing). ASX publishes no OpenAPI, so the tool list below is a
+  CANDIDATE derived from the operations documented on the MIA REST programmatic interface page.
+type: MCPServer
+status: candidate
+generated: '2026-10-21'
+method: derived
+source: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+deployment:
+  mode: none
+  auth: api-key
+  verified: derived
+evidence:
+  - url: https://www.asx.com.au/mcp
+    status: 403
+    note: control path also 403 (pre-flight, opaque)
+  - url: https://mcpservers.org/pt-BR/servers/stonkwatch-app-mcp
+    note: third-party ASX market-data MCP, not published by ASX
+auth_notes: >-
+  Authorisation token generated in the MIA web application (www.asxonline.com/mia/a/auth_token),
+  sent as the Authorization header value; one active token per user, regenerating expires the old one.
+tools:
+  - name: test_connectivity
+    description: Ping the MIA API endpoint to confirm connectivity.
+    backing: GET/POST https://api.asxonline.com/mia/1/mia-api
+  - name: test_authentication
+    description: Verify the supplied Authorization token; returns the authorised user's name.
+    backing: POST https://api.asxonline.com/mia/1/mia-api/a/test_authentication
+  - name: list_product_files
+    description: List the files available for a subscribed product code (file_id, file_name, file_type, production_date, file_url).
+    backing: POST https://api.asxonline.com/mia/1/mia-api/a/subscribed_products
+    inputs: [product_code]
+  - name: fetch_product_file
+    description: Download a product file (binary) by product code and file id.
+    backing: GET/POST https://api.asxonline.com/mia/1/mia-api/a/fetch_product
+    inputs: [product_code, file_id]

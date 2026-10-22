@@ -1,0 +1,7 @@
+generated: '2026-10-21'
+method: none
+source: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+name: ASX rate limits
+limit_count: 0
+limits: []
+note: The MIA REST API Guide publishes no request limits, quota headers or exhaustion status. Only documented constraint is one active token per user.

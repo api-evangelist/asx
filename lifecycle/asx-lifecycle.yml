@@ -1,0 +1,8 @@
+generated: '2026-10-21'
+method: searched
+source: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+name: ASX lifecycle
+versioning: URI path major version (/mia/1/mia-api); no published versioning or deprecation policy.
+deprecation: none published
+status_page: https://www.asx.com.au/content/asx/home/markets/market-resources/system-status.html
+sla: none published

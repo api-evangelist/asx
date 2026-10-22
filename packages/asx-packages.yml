@@ -1,0 +1,12 @@
+generated: '2026-10-21'
+method: none
+name: ASX packages
+packages: []
+note: >-
+  No first-party SDK or client library is documented for the MIA REST API. The ASX GitHub org (github.com/asx, 5 public repos
+  checked via api.github.com 2026-10-21) holds only infrastructure tools (pure-exporter, embiggen-disk, googet, infraeng-interview,
+  ssm-session-client), none an API client. The docs mention a "Java Downloader Guide" for Information Services, but no published package.
+checked:
+- https://api.github.com/orgs/asx/repos
+- https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+- https://asxonline.com/public/documents/asxonline-information-services-user-guide.html

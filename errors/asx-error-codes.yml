@@ -1,0 +1,37 @@
+generated: '2026-10-21'
+method: searched
+source: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+name: ASX MIA REST API error messages
+format: plain message strings
+envelope: Errors other than authentication are returned with HTTP status 200 plus an error message ("If Not successful HTTP Status code 200 + Error message will be returned").
+problems:
+- status: 401
+  title: Authorization Failure - Invalid Authorization Token
+  type: authorization_failure
+  description: Returned by test_authentication when the Authorization token is invalid.
+  remediation: Regenerate a token in the MIA Web Application (only one active token per user).
+- status: 200
+  title: "The specified file ID [{0}] is not associated with product - product code [{1}]."
+  type: file_not_in_product
+  description: file_id does not belong to the given product_code.
+  remediation: Re-list files with subscribed_products and use a returned file_id.
+- status: 200
+  title: "Product code [{0}] cannot be downloaded, please contact ASX Administrator."
+  type: product_not_downloadable
+  description: The product is not available for download.
+  remediation: Contact ASX (Information.Services@asx.com.au).
+- status: 200
+  title: "Unfortunately you do not have a subscription to product - product code [{0}]. Unable to download files."
+  type: no_subscription
+  description: The user holds no subscription to the product.
+  remediation: Subscribe via ASX Information Services.
+- status: 200
+  title: "Unfortunately your subscription (subscription ID [{1}]) to product - product code [{0}] has expired. Unable to download files."
+  type: subscription_expired
+  description: The subscription has expired.
+  remediation: Renew the subscription.
+- status: 200
+  title: "Unfortunately your subscription (subscription ID [{1}]) to product - product code [{0}] is suspended. Unable to download files."
+  type: subscription_suspended
+  description: The subscription is suspended.
+  remediation: Contact ASX Information Services.

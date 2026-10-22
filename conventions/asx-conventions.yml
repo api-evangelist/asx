@@ -1,0 +1,31 @@
+generated: '2026-10-21'
+method: searched
+source: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+name: ASX MIA REST API conventions
+base_url: https://api.asxonline.com/mia/1/mia-api
+auth:
+  style: static per-user token in the Authorization header (see authentication/asx-authentication.yml)
+versioning:
+  style: major version in URI path (/mia/1/)
+  note: Derived from documented sample URLs; no versioning policy is published.
+idempotency:
+  coverage: none
+  note: >-
+    No idempotency mechanism is documented. The documented POST operations (test_authentication,
+    subscribed_products) are read-style lookups; fetch_product accepts GET or POST.
+pagination:
+  style: none
+  note: subscribed_products returns a bare JSON array of files; no paging parameters are documented.
+error_envelope:
+  note: >-
+    Business errors are returned with "HTTP Status code 200 + Error message" (plain message strings),
+    not an HTTP error status; only authentication failure uses 401. See errors/asx-error-codes.yml.
+file_delivery:
+  note: fetch_product returns the binary file with Content-Disposition attachment; fileName.
+rate_limit_signaling:
+  note: None documented. See rate-limits/asx-rate-limits.yml.
+request_id: none documented
+reversibility:
+  status: na
+  note: The documented API surface is read-only (list subscribed product files, download a file, test authentication); there is no write surface to reverse.
+dry_run_mode: na

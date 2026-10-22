@@ -1,23 +1,128 @@
 aid: asx
+
 name: ASX
-description: 'ASX is a company surfaced via the API Evangelist harvest backlog (source: australia-apidays-2026)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: ASX Limited (ABN 98 008 624 691) operates the Australian Securities Exchange, Australia's primary securities exchange. The ASX Group's
+  activities span primary and secondary market services, including capital formation and hedging, trading and price discovery, clearing and settlement,
+  and connectivity and market data. Through ASX Information Services (ASX Online) it licenses price, reference, benchmark and company-announcement
+  data to subscribers, with a documented REST programmatic interface and Java downloader for the Market Information Application.
+
 url: https://raw.githubusercontent.com/api-evangelist/asx/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
 - Company
-apis: []
+- Stock Exchange
+- Financial Markets
+- Market Data
+- Clearing and Settlement
+- Trading
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+image: https://www.asx.com.au/content/asx/home.thumb.1000.1000.png
+
 common:
+- type: Plans
+  url: plans/asx-plans-pricing.yml
+- type: Conventions
+  url: conventions/asx-conventions.yml
+- type: Authentication
+  url: authentication/asx-authentication.yml
+- type: Lifecycle
+  url: lifecycle/asx-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/asx-error-codes.yml
+- type: Hosts
+  url: hosts/asx-hosts.yml
+- type: Vendors
+  url: vendors/asx-vendors.yml
+- type: GettingStarted
+  url: https://www.asx.com.au/blog/investor-update/2026/the-rise-of-young-women-investors-nine-top-tips-for-getting-started
+- type: DomainSecurity
+  url: security/asx-domain-security.yml
 - type: Website
-  url: https://asx.com.au/
+  url: https://www.asx.com.au/
+- type: DeveloperPortal
+  url: https://www.asx.com.au/connectivity-and-data/information-services
+- type: Documentation
+  url: https://asxonline.com/public/documents/asxonline-information-services-user-guide.html
+- type: APIReference
+  url: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+- type: Support
+  url: https://www.asx.com.au/about/contact-asx
+- type: Blog
+  url: https://www.asx.com.au/blog
+- type: GitHubOrganization
+  url: https://github.com/asx
+- type: StatusPage
+  url: https://www.asx.com.au/content/asx/home/markets/market-resources/system-status.html
+- type: Pricing
+  url: https://www.asx.com.au/issuers/issuer-services/pricing-calculator
+- type: TermsOfService
+  url: https://www.asx.com.au/content/asx/home/legals/terms-of-use.html
+- type: PrivacyPolicy
+  url: https://www.asx.com.au/legals/privacy-statement
+
+apis:
+- name: ASX Market Information Application (MIA) REST API
+  description: REST programmatic interface to ASX Online's Market Information Application (Information Services), letting subscribers test connectivity,
+    test token authentication, list the files of a subscribed product code and fetch product files. The authorisation token is generated in the
+    MIA web application (www.asxonline.com/mia/a/auth_token) and sent in the Authorization header; one active token per user. ASX publishes no
+    machine-readable contract (OpenAPI, AsyncAPI, WSDL) for this API.
+  humanURL: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+  baseURL: https://api.asxonline.com/mia/1/mia-api
+  tags:
+  - Market Data
+  - Reference Data
+  - File Download
+  properties:
+  - type: Documentation
+    url: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+  - type: Documentation
+    url: https://asxonline.com/public/documents/asxonline-information-services-user-guide.html
+  aid: asx:asx-market-information-application-mia-rest-api
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Homepage title "Australian Securities Exchange | ASX"; asxonline.com footer names ASX Limited ABN 98 008 624 691 and links asx.com.au;
+    github.com/asx is "ASX Limited" linking www.asx.com.au.
+  evidence:
+  - url: https://www.asx.com.au/
+    status: 200
+  - url: https://asxonline.com/public/documents/asxonline-information-services-user-guide.html
+    status: 200
+  - url: https://asxonline.com/content/asxonline/public/documents/market-information-application--mia----rest-programmatic-interfa.html
+    status: 200
+  - url: https://github.com/asx
+    status: 200
+  - url: https://www.asx.com.au/about/contact-asx
+    status: 200
+  - url: https://www.asx.com.au/blog
+    status: 200
+  - url: https://www.asx.com.au/connectivity-and-data/information-services
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 15
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

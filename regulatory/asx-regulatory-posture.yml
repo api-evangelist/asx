@@ -1,0 +1,64 @@
+generated: '2026-10-21'
+method: searched
+source: https://www.asx.com.au/legals/privacy-statement
+signals:
+  data_subject_request:
+    url: https://www.asx.com.au/legals/privacy-statement
+    section: Feedback and enquiries
+    rights_named: [access, correction]
+    evidence:
+    - source: https://www.asx.com.au/legals/privacy-statement
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: >-
+        Individuals may request access to, or correction of, personal information ASX holds about them, in
+        accordance with applicable privacy laws.
+    - source: https://www.asx.com.au/legals/privacy-statement
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: >-
+        Individuals seeking to request access to or update CHESS-related details must contact their
+        broker/trading platform directly. For personal information held by ASX outside of CHESS, individuals
+        may contact ASX to request access or corrections, or to obtain guidance on how to do so.
+    note: >-
+      Access and correction rights are stated, routed by data type: CHESS records go through the broker or
+      trading platform, everything else to ASX directly. No deletion or portability right and no response
+      time are stated.
+  data_residency:
+    url: https://www.asx.com.au/legals/privacy-statement
+    section: Disclosure of personal information
+    evidence:
+    - source: https://www.asx.com.au/legals/privacy-statement
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: >-
+        Countries in which personal information may be disclosed or stored include, but are not limited to,
+        the United States, the United Kingdom, India and other jurisdictions in which ASX service providers,
+        registries or related bodies corporate operate.
+    note: >-
+      This is a disclosure of overseas storage, NOT an in-country residency commitment. Personal information
+      may leave Australia, and the list of countries is explicitly open-ended.
+  data_retention:
+    url: https://www.asx.com.au/legals/privacy-statement
+    section: Data quality, security and retention
+    evidence:
+    - source: https://www.asx.com.au/legals/privacy-statement
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: >-
+        Personal information will be retained having regard to the purpose for which it was collected and
+        applicable legal or regulatory requirements, and in accordance with applicable ASX policies. Where
+        personal information is no longer required, ASX will take reasonable steps to destroy or permanently
+        de‑identify the information, unless retention is otherwise permitted or required by law.
+    note: >-
+      A purpose-based retention principle with destruction or de-identification at end of need. No fixed
+      retention periods are published.
+not_found:
+  transparency_report: >-
+    The pre-flight candidate passage only lists "responding to law enforcement requests" as a purpose of
+    processing. It is not a published transparency report, so no signal is recorded.
+pages_read:
+- url: https://www.asx.com.au/legals/privacy-statement
+  http_status: 200
+- url: https://www.asx.com.au/legals/terms-of-use
+  http_status: 200

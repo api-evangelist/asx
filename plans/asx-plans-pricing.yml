@@ -1,0 +1,50 @@
+generated: '2026-10-21'
+method: searched
+source: https://asxonline.com/content/dam/asxonline/public/documents/schedule-of-fees/asx_015360.pdf
+name: ASX pricing
+audience: business-product
+pricing_basis: tiered-subscription
+published: true
+currency: AUD
+delivery:
+  delivery: managed
+note: >-
+  ASX Information and Technical Services Schedule of Fees (Version 1.0, September 2026), fees excl. GST. API access is not priced
+  separately: the MIA REST API delivers files for data products the user subscribes to, and the schedule prices those products and
+  connections. A representative subset is recorded; the full schedule lists hundreds of fee codes. The source is a PDF the economics checker cannot read as text; every price_text was copied verbatim from pdftotext output of that PDF (fetched 200, 931758 bytes, 2026-10-21).
+plans:
+- name: ASX – Indirect Market Access – internal use (03000647)
+  description: Datafeed or API connection provided by a Vendor or Sub-vendor to a Subscriber Firm for internal use.
+  price: 575
+  price_text: "$575"
+  billing_period: monthly
+  features: ["Per Datafeed", "Effective 1 Jan 2026; $604 from 1 Jan 2027"]
+  limits: []
+- name: ASX 24 – Indirect Market Access – internal use (03000648)
+  description: Datafeed or API connection provided by a Vendor or Sub-vendor to a Subscriber Firm for internal use.
+  price: 575
+  price_text: "$575"
+  billing_period: monthly
+  features: ["Per Datafeed"]
+  limits: []
+- name: BBSW Live (03200011)
+  description: Internal use of BBSW Live within a firm’s office in a single country.
+  price: 564
+  price_text: "$564"
+  billing_period: monthly
+  features: ["Per legal entity"]
+  limits: []
+- name: BBSW Total (03200016)
+  description: Internal use of BBSW Total within a firm’s office in a single country.
+  price: 1018
+  price_text: "$1,018"
+  billing_period: monthly
+  features: ["Per legal entity"]
+  limits: []
+- name: Market Data Download (05100250)
+  description: Access to ASX ITCH or ASX 24 Multicast Market Data Protocol files
+  price: 2760
+  price_text: "$2,760"
+  billing_period: monthly
+  features: ["Per Market"]
+  limits: []

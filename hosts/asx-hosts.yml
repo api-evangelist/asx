@@ -1,0 +1,131 @@
+generated: '2026-10-21'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 4
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - source
+  - website
+hosts:
+- host: api.asxonline.com
+  found_by:
+  - apis[]
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves:
+  - api
+  title: Information Services Application - API Guide
+  status: 200
+  registrable_domain: asxonline.com
+  role: api
+  relation: other-domain
+- host: api.com.au
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: api.com.au
+  role: api
+  relation: other-domain
+- host: asxonline.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  - APIReference
+  serves:
+  - docs
+  registrable_domain: asxonline.com
+  role: docs
+  relation: other-domain
+- host: game.asx.com.au
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: asx.com.au
+  role: other
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: myasx.asx.com.au
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: asx.com.au
+  role: other
+  relation: own
+- host: www.asx.com.au
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - GettingStarted
+  - Website
+  - DeveloperPortal
+  - Support
+  - Blog
+  - StatusPage
+  - Pricing
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  vendor: fastly
+  registrable_domain: asx.com.au
+  role: website
+  relation: own
+- host: www.asxonline.com
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: asxonline.com
+  role: other
+  relation: other-domain
+- host: www2.asx.com.au
+  found_by:
+  - probed
+  - site-links
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: asx.com.au
+  role: other
+  relation: own
